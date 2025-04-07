@@ -521,7 +521,10 @@ psupertime <- function(x, y, y_labels=NULL, assay_type='logcounts',
 		nhbr_mat 		= apply(-cor_mat, 1, rank, ties.method='random')
 		idx_mat 		= nhbr_mat <= knn
 		avg_knn_mat 	= sweep(idx_mat, 2, colSums(idx_mat), '/')
-		stopifnot( all(colSums(avg_knn_mat)==1) )
+
+		# RHvdW::07042025 (floating-point precision error)
+		# stopifnot( all(colSums(avg_knn_mat)==1) )
+		stopifnot( all(abs(colSums(avg_knn_mat) - 1) < 1e-8) ) 
 		
 		# calculate average over all kNNs
 		imputed_mat 	= x_t %*% avg_knn_mat
