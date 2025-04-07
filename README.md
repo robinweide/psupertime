@@ -2,6 +2,14 @@
 <br />
 <img src="inst/extdata/psuperlogo.png" width="200" align="right"/> 
 
+# ⚠️ warning
+This is a fork of `wmacnair/psupertime` to fix some bugs that seem to have occurred over the years. 
+
+## Changelog
+- [commit 1: floating-point precision error in KNN](https://github.com/robinweide/psupertime/commit/458879be542c69fc935aa02eb6bd5065224392a9)
+- 
+
+
 # psupertime
 
 :wave: Hello User! :wave:
@@ -15,7 +23,7 @@ https://www.biorxiv.org/content/10.1101/622001v1
 
 To use this development version of the package, run the following lines in R:
 ```R
-devtools::install_github('wmacnair/psupertime', build_vignettes=TRUE)
+devtools::install_github('robinweide/psupertime', build_vignettes=TRUE)
 library('psupertime')
 ```
 (You may need to install the package `remotes`, with `install.packages('remotes')`. Installation took <90s on a Macbook Pro.)
